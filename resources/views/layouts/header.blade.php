@@ -31,12 +31,12 @@
         </form>
         <ul class="navbar-nav  mb-2 mb-lg-0">
           @auth()
-            <li class="nav-item pl-5"><a href="{{ route('profile') }}" class="nav-link">Username</a></li>
-            <li class="nav-item"><a href="{{ route('logout') }}" class="nav-link">Logout</a></li>
+            <li class="nav-item pl-5"><a href="{{ route('profile') }}" class="nav-link">Имя</a></li>
+            <li class="nav-item"><a href="{{ route('logout') }}" class="nav-link">Выйти</a></li>
           @endauth
           @guest
-            <li class="nav-item pl-5"><a href="{{ route('login') }}" class="nav-link">Login</a></li>
-            <li class="nav-item"><a href="{{ route('register') }}" class="nav-link">Register</a></li>
+            <li class="nav-item pl-5"><a href="{{ route('login') }}" class="nav-link">Войти</a></li>
+            <li class="nav-item"><a href="{{ route('register') }}" class="nav-link">Регистрация</a></li>
           @endguest()
         </ul>
       </div>

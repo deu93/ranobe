@@ -21,6 +21,7 @@ use App\Http\Controllers\Auth\RegisterController;
 
 Route::get('/', [HomePageController::class, 'index'])->name('home');
 Route::get('/register', [RegisterController::class, 'index'])->name('register');
+Route::post('/register', [RegisterController::class, 'store']);
 Route::get('login', [LoginController::class, 'index'])->name('login');
 Route::get('logout', [LogoutController::class, 'index'])->name('logout');
 Route::get('profile', [ProfileController::class, 'index'])->name('profile');
