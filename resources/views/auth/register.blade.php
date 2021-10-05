@@ -1,7 +1,7 @@
 @extends('layouts.app')
 @section('content')
 
-    <div class="flex justify-center pt-3">
+    <div class="flex justify-center pt-5">
         <div class="w-6/12 bg-gray-300 p-6 rounded-lg">
             <form action="" method="post">
                 @csrf
