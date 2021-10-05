@@ -1,7 +1,7 @@
 @extends('layouts.app')
 @section('content')
 @foreach ($ranobes as $ranobe)
-<div class="card pl-5" style="width: 150px;">
+<div class="card pl-3 pr-2" style="width: 150px;">
     <img src="{{ asset('img/' . $ranobe->ranobe_image) }}" class="card-img-top" alt="...">
     <div class="card-body">
       <h5 class="card-title">{{ $ranobe->title }}</h5>

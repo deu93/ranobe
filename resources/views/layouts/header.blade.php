@@ -1,6 +1,6 @@
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
     <div class="container-fluid">
-      <a class="navbar-brand" href="#">Ранобэ.онлайн</a>
+      <a class="navbar-brand" href="{{ route('home') }}">Ранобэ.онлайн</a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
@@ -26,9 +26,19 @@
           
         </ul>
         <form class="d-flex">
-          <input class="form-control me-2" type="search" placeholder="Искать ранобэ" aria-label="Search">
+          <input class="form-control m-auto me-2" type="search" placeholder="Искать ранобэ" aria-label="Search">
           <button class="btn btn-outline-success" type="submit">Поиск</button>
         </form>
+        <ul class="navbar-nav  mb-2 mb-lg-0">
+          @auth()
+            <li class="nav-item pl-5"><a href="{{ route('profile') }}" class="nav-link">Username</a></li>
+            <li class="nav-item"><a href="{{ route('logout') }}" class="nav-link">Logout</a></li>
+          @endauth
+          @guest
+            <li class="nav-item pl-5"><a href="{{ route('login') }}" class="nav-link">Login</a></li>
+            <li class="nav-item"><a href="{{ route('register') }}" class="nav-link">Register</a></li>
+          @endguest()
+        </ul>
       </div>
     </div>
   </nav>

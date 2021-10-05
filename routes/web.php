@@ -1,7 +1,9 @@
 <?php
 
-use App\Http\Controllers\HomePageController;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\HomePageController;
+use App\Http\Controllers\Auth\RegisterController;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -14,4 +16,8 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', [HomePageController::class, 'index']);
+Route::get('/', [HomePageController::class, 'index'])->name('home');
+Route::get('/register', [RegisterController::class, 'index'])->name('register');
+Route::get('login', [LoginController::Class, 'index'])->name('login');
+Route::get('logout', [LogoutController::class, 'index'])->name('logout');
+Route::get('profile', [ProfileController::class, 'index'])->name('profile');
