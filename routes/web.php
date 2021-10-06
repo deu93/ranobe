@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\BookController;
 use App\Http\Controllers\HomePageController;
 use App\Http\Controllers\Auth\LoginController;
 use App\Http\Controllers\Auth\LogoutController;
@@ -28,3 +29,6 @@ Route::post('/logout', [LogoutController::class, 'logout'])->name('logout');
 Route::get('/profile', [ProfileController::class, 'index'])->name('profile');
 Route::get('/editprofile', [ProfileController::class, 'edit'])->name('editprofile');
 Route::post('/editprofile', [ProfileController::class, 'update']);
+Route::get('add-book', [BookController::class, 'index'])->name('add-book');
+Route::post('add-book', [BookController::class, 'store']);
+

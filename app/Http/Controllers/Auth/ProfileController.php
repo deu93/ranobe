@@ -33,18 +33,25 @@ class ProfileController extends Controller
             'name' => 'required|max:255',
             'username' => 'required|max:255',
             'email' => 'required|email|max:255',
-            'password' => 'required|confirmed'
+            
         ]);
 
         $id = Auth::user()->id;
         $user = User::find($id);
         
-        $user->name = $request->name;
-        $user->username = $request->username;
-        $user->email = $request->email;
-        $user->password = Hash::make($request->password);
-        $user->save();
 
+        
+
+        if(Hash::check($request->password, $user->password)){
+            $user->name = $request->name;
+            $user->username = $request->username;
+            $user->email = $request->email;
+            $user->save();
+        }
+        else{
+            return redirect()->back()->with('status' , 'Не верный пароль');
+        }
+        
         return redirect()->route('profile');
         
     }
