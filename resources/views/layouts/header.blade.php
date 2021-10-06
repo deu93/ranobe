@@ -31,8 +31,13 @@
         </form>
         <ul class="navbar-nav  mb-2 mb-lg-0">
           @auth()
-            <li class="nav-item pl-5"><a href="{{ route('profile') }}" class="nav-link">Имя</a></li>
-            <li class="nav-item"><a href="{{ route('logout') }}" class="nav-link">Выйти</a></li>
+            <li class="nav-item pl-5"><a href="{{ route('profile') }}" class="nav-link">{{ auth()->user()->name }}</a></li>
+            <li class="nav-item">
+              <form action=" {{ route('logout') }}" method="post" class="">
+                @csrf
+                <button type="submit" class="nav-link">Выйти</button>
+                </form>
+            </li>
           @endauth
           @guest
             <li class="nav-item pl-5"><a href="{{ route('login') }}" class="nav-link">Войти</a></li>

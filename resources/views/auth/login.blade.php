@@ -10,7 +10,7 @@
                 </div>
             @endif
 
-            <form action="" method="post">
+            <form action="{{ route('login') }}" method="post">
                 @csrf
                 <div class="mb-4">
                     <label for="email" class="sr-only ">Email</label>
