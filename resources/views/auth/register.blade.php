@@ -3,6 +3,11 @@
 
     <div class="flex justify-center pt-5">
         <div class="w-6/12 bg-gray-300 p-6 rounded-lg">
+            @if(session('status'))
+                <div class="bg-red-500 p-4 rounded-lg mb-6 text-white text-center">
+                {{session('status')}}
+                </div>
+            @endif
             <form action="{{ route('register') }}" method="post">
                 @csrf
                 <div class="mb-4">

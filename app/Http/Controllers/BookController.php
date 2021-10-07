@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Book;
+use Illuminate\Support\Str;
 use Illuminate\Http\Request;
 
 class BookController extends Controller
@@ -35,10 +36,13 @@ class BookController extends Controller
                 $filename = time() . '.' . $file->extension();
                 $file->move('img', $filename);
                 $book->image = $filename;
+                
             }
-
+            
             $book->title = $request->title;
+            $book->slug = Str::slug($request->title, '-');
             $book->description = $request->description;
+            $book->user_id = $request->user()->id;
             $book->save();
 
             return redirect()->route('home')->with('status', 'Книга добавлена успешно');

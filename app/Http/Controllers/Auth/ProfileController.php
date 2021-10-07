@@ -46,7 +46,7 @@ class ProfileController extends Controller
             $user->name = $request->name;
             $user->username = $request->username;
             $user->email = $request->email;
-            $user->save();
+            $user->update();
         }
         else{
             return redirect()->back()->with('status' , 'Не верный пароль');

@@ -27,17 +27,29 @@ class RegisterController extends Controller
             'password' => 'required|confirmed'
             
         ]);
+        
+        
+        if(User::where('username', $request->username)->first() ){
+            return redirect()->back()->with('status', 'This username has been taken'); 
+        }
+        elseif(User::where('email', $request->email)->first()){
+            return redirect()->back()->with('status', 'This email has been taken');
+        }
+        else {
+            User::create([
+                'name' => $request->name,
+                'username' => $request->username,
+                'email' => $request->email,
+                'password' => Hash::make($request->password)
+            ]);
 
-        User::create([
-            'name' => $request->name,
-            'username' => $request->username,
-            'email' => $request->email,
-            'password' => Hash::make($request->password)
-        ]);
+            auth()->attempt($request->only('email', 'password'));
+
+            return redirect()->route('dashboard');
+        }
+        
         
 
-        auth()->attempt($request->only('email', 'password'));
-
-        return redirect()->route('home');
+        
     }
 }

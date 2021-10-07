@@ -9,9 +9,15 @@
           <li class="nav-item">
             <a class="nav-link active" aria-current="page" href="#">Ранобэ</a>
           </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">Добавить ранобэ</a>
-          </li>
+          
+            <li class="nav-item">
+              <a class="nav-link" href="#">Выбрать ранобэ</a>
+            </li> 
+            @auth()
+            <li class="nav-item">
+              <a class="nav-link" href="{{ route('dashboard') }}">Dashboard</a>
+            </li>
+            @endauth
           <li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
               Жанры

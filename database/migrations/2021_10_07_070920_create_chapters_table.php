@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateRanobesChaptersTable extends Migration
+class CreateChaptersTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,13 +13,13 @@ class CreateRanobesChaptersTable extends Migration
      */
     public function up()
     {
-        Schema::create('ranobes_chapters', function (Blueprint $table) {
+        Schema::create('chapters', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('ranobe_id')->constrained();
+            $table->foreignId('book_id')->constrained();
             $table->string('chapter_name');
             $table->longText('chapter_text');
-            $table->string('image')->nullable();
             $table->timestamps();
+        
         });
     }
 
@@ -30,6 +30,6 @@ class CreateRanobesChaptersTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('ranobes_chapters');
+        Schema::dropIfExists('chapters');
     }
 }
