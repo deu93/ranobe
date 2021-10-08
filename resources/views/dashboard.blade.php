@@ -23,6 +23,6 @@
 
     </div>
     <div class="flex justify-center  mt-5 mb-5">
-        <a href="{{ route('add-book/') }}" class="bg-blue-500 m-auto text-white px-5 no-underline  py-3 rounded font-medium w-2/12">Добавить ранобэ</a>
+        <a href="{{ route('add-book') }}" class="bg-blue-500 m-auto text-white px-5 no-underline  py-3 rounded font-medium w-2/12">Добавить ранобэ</a>
     </div>
 @endsection
