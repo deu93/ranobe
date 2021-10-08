@@ -10,8 +10,9 @@
             <p>{{ $shortDescription }}</p>
             <a type="submit" class="bg-blue-500 m-auto text-white px-4 no-underline py-2 mb-3  rounded font-medium w-2/12">Читать с 1 главы</a>
             
-        </div> 
-    </div>
+            </div> 
+        @endif
+        </div>
 </div>
 
 
