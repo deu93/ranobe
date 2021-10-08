@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\AddGenreController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\BookController;
 use App\Http\Controllers\HomePageController;
@@ -33,4 +34,6 @@ Route::post('/editprofile', [ProfileController::class, 'update']);
 Route::get('/add-book', [BookController::class, 'index'])->name('add-book');
 Route::post('/add-book', [BookController::class, 'store']);
 Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard');
-Route::get('/{slug}', [BookShowController::class, 'index']);
+Route::get('/book-show/{slug}', [BookShowController::class, 'index']);
+Route::get('/add-genre', [AddGenreController::class, 'index'])->name('add-genre');
+Route::post('/add-genre', [AddGenreController::class, 'store']);

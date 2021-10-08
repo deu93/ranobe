@@ -11,7 +11,7 @@
         @endphp
         <h5 class="card-title m-auto text-xl mb-1">{{ $ranobe->title }}</h5>
         <p class="card-text m-auto">{{ $shortDescription }}</p>
-        <a href="/{{ $ranobe->slug}}" class="btn btn-primary ml-7 mt-2">Читать</a>
+        <a href="/book-show/{{ $ranobe->slug}}" class="btn btn-primary ml-7 mt-2">Читать</a>
       </div>
     </div>
   @endforeach
