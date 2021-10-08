@@ -8,7 +8,7 @@ use App\Http\Controllers\Auth\LoginController;
 use App\Http\Controllers\Auth\LogoutController;
 use App\Http\Controllers\Auth\ProfileController;
 use App\Http\Controllers\Auth\RegisterController;
-
+use App\Http\Controllers\BookShowController;
 
 /*
 |--------------------------------------------------------------------------
@@ -33,3 +33,4 @@ Route::post('/editprofile', [ProfileController::class, 'update']);
 Route::get('/add-book', [BookController::class, 'index'])->name('add-book');
 Route::post('/add-book', [BookController::class, 'store']);
 Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard');
+Route::get('/book-show{slug}', [BookShowController::class, 'index'])->name('book-show');
