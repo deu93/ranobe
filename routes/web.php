@@ -33,4 +33,4 @@ Route::post('/editprofile', [ProfileController::class, 'update']);
 Route::get('/add-book', [BookController::class, 'index'])->name('add-book');
 Route::post('/add-book', [BookController::class, 'store']);
 Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard');
-Route::get('/book-show{slug}', [BookShowController::class, 'index'])->name('book-show');
+Route::get('/{slug}', [BookShowController::class, 'index']);
