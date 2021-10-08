@@ -6,7 +6,7 @@
            
             <h4 class="mb-2 text-lg pl-2">{{ $book->title }}</h4>
             <img src="{{ asset('ranobe/public/img/' . $book->image) }}" alt="">
-            <p>{{ $shortDescription }}</p>
+            <p>{{ $book->description }}</p>
             <a type="submit" class="bg-blue-500 m-auto text-white px-4 no-underline py-2 mb-3  rounded font-medium w-2/12">Читать с 1 главы</a>
             
             </div> 
