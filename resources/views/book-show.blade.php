@@ -1,8 +1,8 @@
 @extends('layouts.app')
 @section('content')
 <div class="w-full">
-        <div class="flex ml-5">
-            <div class="bg-white w-12/12 mb-4 pl-3 pr-2 m-2 ml-4 mr-4">
+        <div class="flex ml-5 mr-5">
+            <div class="bg-white w-12/12 mb-4 pl-3 pr-2 m-2 ml-4 ">
                <h4 class=" justify-center mb-2 text-2xl pl-2">{{ $book->title }}</h4>
                 <img class="mt-3 ml-3" src="{{ asset('ranobe/public/img/' . $book->image) }}" alt="">
                 <p class="text-lg mb-3 mt-3 ml-3 mr-3">{{ $book->description }}</p>
