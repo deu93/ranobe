@@ -6,6 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="css/app.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link href="https://unpkg.com/tailwindcss@^1.0/dist/tailwind.min.css" rel="stylesheet">
     <title>Ранобэ. Читать ранобэ онлайн на русском. Ранобэ онлайн!</title>
     <meta name="description" content="Ранобэ, Ранобэ онлайн! У нас всё ранобэ бесплатно и без регистрации! Читать ранобэ! ранобэ на русском языке, переводы ранобэ, популярнае ранобэ!
 "/>
