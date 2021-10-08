@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use App\Models\Book;
+use App\Models\Genre;
+use App\Models\BookGenre;
 use Illuminate\Support\Str;
 use Illuminate\Http\Request;
 
@@ -14,8 +16,11 @@ class BookController extends Controller
     }
     
     public function index() {
+        $genres = Genre::all();
         if(auth()->user()->role == 1 || auth()->user()->role == 2){
-            return view('add-book');   
+            return view('add-book',[
+                'genres' => $genres
+            ]);   
         }
         
     }
@@ -44,6 +49,9 @@ class BookController extends Controller
             $book->description = $request->description;
             $book->user_id = $request->user()->id;
             $book->save();
+            
+            $bookGenre = new BookGenre();
+
 
             return redirect()->route('dashboard')->with('status', 'Книга добавлена успешно');
         }

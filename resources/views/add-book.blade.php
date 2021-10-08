@@ -26,6 +26,11 @@
                     </div>
                     @enderror
                 </div>
+                <div class="mb-4">
+                    <label for="">Status</label>
+                    <input type="checkbox"   name="status">
+                </div>
+
                 <div class="mb-4 w-6/12">
                     <p class="text-lg">Выберите изображение для книги</p>
                     <input type="file" name="image" id="image"  >
