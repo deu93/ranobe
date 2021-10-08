@@ -9,7 +9,7 @@ class BookShowController extends Controller
 {
     public function index($slug) {
         $book= Book::where('slug',$slug)->first();
-        dd($book);
+        dd($book->description);
         return view('book-show',[
             'book' => $book
         ]);
