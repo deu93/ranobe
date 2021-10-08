@@ -7,7 +7,7 @@
       <img src="{{ asset('ranobe/public/img/' . $ranobe->image) }}" class="card-img-top" alt="No image">
       <div class="card-body">
         @php
-          $shortDescription = Str::limit($ranobe->description, 20, '...')
+          $shortDescription = Str::limit($ranobe->description, 30, '...')
         @endphp
         <h5 class="card-title m-auto">{{ $ranobe->title }}</h5>
         <p class="card-text m-auto">{{ $shortDescription }}</p>
