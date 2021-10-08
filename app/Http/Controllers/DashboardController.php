@@ -12,7 +12,7 @@ class DashboardController extends Controller
         $this->middleware(['auth']);
     }
     public function index() {
-        $books = Book::where('user_id', auth()->user()->id)->get();
+        $books = Book::where('user_id', auth()->user()->id)->get()->paginate(5);
         $role = auth()->user()->role;
         if($role == 0) {
             return redirect()->back()->with('status', 'Страница не найдена');

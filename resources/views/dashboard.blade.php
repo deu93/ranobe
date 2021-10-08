@@ -2,7 +2,7 @@
 @section('content')
     <div class="w-full px-4">
         <h2 class="text-lg color-white flex justify-center my-3">Мои ранобэ</h2>
-        <div class="flex">
+        <div class="flex ml-5">
             @if (!$books->isEmpty())
             @foreach ($books as $book )
             <div class="bg-white w-2/12 mb-4 pl-3 pr-2 m-2">
