@@ -7,7 +7,7 @@
             @foreach ($books as $book )
             <div class="bg-white w-2/12 mb-4 pl-3 pr-2 m-2">
                 @php
-                    $shortDescription = Str::limit($ranobe->description, 30, '...')
+                    $shortDescription = Str::limit($book->description, 40, '...')
                 @endphp
                 <h4>{{ $book->title }}</h4>
                 <img src="{{ asset('ranobe/public/img/' . $book->image) }}" alt="">
