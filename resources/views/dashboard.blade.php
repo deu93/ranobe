@@ -5,7 +5,7 @@
         <div class="flex">
             @if (!$books->isEmpty())
             @foreach ($books as $book )
-            <div class="bg-white w-3/12 mb-4 pl-3 pr-2 m-2">
+            <div class="bg-white w-2/12 mb-4 pl-3 pr-2 m-2">
                 <h4>{{ $book->title }}</h4>
                 <img src="{{ asset('ranobe/public/img/' . $book->image) }}" alt="">
                 <p>{{ $book->description }}</p>
