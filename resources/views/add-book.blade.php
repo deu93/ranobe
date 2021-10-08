@@ -26,10 +26,12 @@
                     </div>
                     @enderror
                 </div>
-                <div class="mb-4">
-                    <label for="">Status</label>
-                    <input type="checkbox"   name="status">
-                </div>
+                @foreach ($genres as $genre )
+                    <div class="mb-4">
+                        <label for="">{{ $genre->genres_name }}</label>
+                        <input type="checkbox"   name="{{ $genre->genres_name }}">
+                    </div>
+                @endforeach
 
                 <div class="mb-4 w-6/12">
                     <p class="text-lg">Выберите изображение для книги</p>
