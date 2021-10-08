@@ -45,7 +45,7 @@ class BookController extends Controller
             $book->user_id = $request->user()->id;
             $book->save();
 
-            return redirect()->route('home')->with('status', 'Книга добавлена успешно');
+            return redirect()->route('dashboard')->with('status', 'Книга добавлена успешно');
         }
     }
 }
