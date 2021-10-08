@@ -8,7 +8,7 @@ use Illuminate\Http\Request;
 class BookShowController extends Controller
 {
     public function index($slug) {
-        $book= Book::find($slug);
+        $book= Book::where('slug',$slug)->first();
         dd($book);
         return view('book-show',[
             'book' => $book
