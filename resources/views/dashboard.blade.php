@@ -1,6 +1,6 @@
 @extends('layouts.app')
 @section('content')
-    <div class="w-8/12 px-4">
+    <div class="w-8/12 px-4 flex">
         <h2>Мои ранобэ</h2>
         @if (!$books->isEmpty())
             @foreach ($books as $book )
