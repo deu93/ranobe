@@ -13,9 +13,15 @@ class DashboardController extends Controller
     }
     public function index() {
         $books = Book::where('user_id', auth()->user()->id)->get();
-        
-        return view('dashboard', [
+        $role = auth()->user()->role;
+        if($role == 0) {
+            return redirect()->back()->with('status', 'Страница не найдена');
+        }
+        else{
+          return view('dashboard', [
             'books' => $books
-        ]);
+        ]);  
+        }
+        
     }
 }
