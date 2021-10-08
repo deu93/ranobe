@@ -1,7 +1,7 @@
 @extends('layouts.app')
 @section('content')
     <div class="w-8/12 px-4">
-        <h2 class="text-lg color-white justify-center">Мои ранобэ</h2>
+        <h2 class="text-lg color-white justify-center w-full">Мои ранобэ</h2>
         <div class="flex">
             @if (!$books->isEmpty())
             @foreach ($books as $book )
