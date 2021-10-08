@@ -6,8 +6,8 @@
            
                 <h4 class=" justify-center mb-2 text-2xl pl-2">{{ $book->title }}</h4>
                 <img src="{{ asset('ranobe/public/img/' . $book->image) }}" alt="">
-                <p class="text-lg">{{ $book->description }}</p>
-                <a type="submit" class="bg-blue-500 m-auto text-white px-4 no-underline py-2 mb-3  rounded font-medium w-2/12">Читать с 1 главы</a>
+                <p class="text-lg mb-3 mt-5 ml-3 mr-3">{{ $book->description }}</p>
+                <a type="submit" class="bg-blue-500 mt-5 text-white px-4 no-underline py-2 mb-3  rounded font-medium w-2/12">Читать с 1 главы</a>
             
             </div> 
         
