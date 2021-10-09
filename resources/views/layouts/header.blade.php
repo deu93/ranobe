@@ -14,9 +14,16 @@
               <a class="nav-link" href="#">Выбрать ранобэ</a>
             </li> 
             @auth()
-            <li class="nav-item">
-              <a class="nav-link" href="{{ route('dashboard') }}">Dashboard</a>
-            </li>
+              @if (auth()->user()->role > 0)
+              <li class="nav-item">
+                <a class="nav-link" href="{{ route('dashboard') }}">Мои ранобэ</a>
+              </li>
+              @endif
+              @if (auth()->user()->role > 1)
+                <li class="nav-item">
+                  <a class="nav-link" href="{{ route('add-genre') }}">Добавить жанр</a>
+                </li>
+              @endif
             @endauth
           <li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">

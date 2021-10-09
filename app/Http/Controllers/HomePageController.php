@@ -10,7 +10,7 @@ use Illuminate\Http\Request;
 class HomePageController extends Controller
 {
     public function index() {
-        $ranobes = Book::latest()->paginate(6);
+        $ranobes = Book::latest()->paginate(5);
         
         return view('index', [
             'ranobes' => $ranobes,
