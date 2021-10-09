@@ -27,12 +27,16 @@
                     @enderror
                 </div>
                 <div class="flex">
-                    @foreach ($genres as $genre )
+                    
+                    @foreach ($books as $book)
                     <div class="mb-4">
-                        <label for="">{{ $genre->genres_name }}</label>
-                        <input type="checkbox"  class="mr-2"  name="{{ $genre->id }}">
+                        <label for="">{{ $book->genres_name }}</label>
+                        <input type="checkbox" {{ $book->genre_added == 1 ? 'checked' : '' }} class="mr-2"  name="{{ $book->genres_id }}">
                     </div>
-                @endforeach
+                    
+                    @endforeach
+                    
+                
                 </div>
 
                 <div class="mb-4 w-6/12">

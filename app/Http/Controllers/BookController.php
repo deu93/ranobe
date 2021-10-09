@@ -7,6 +7,7 @@ use App\Models\Genre;
 use App\Models\BookGenre;
 use Illuminate\Support\Str;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class BookController extends Controller
 {
@@ -62,7 +63,11 @@ class BookController extends Controller
                 $bookGenre->book_id = $book->id;
                 $bookGenre->genres_id = $genre->id;
                 $id = $genre->id;
-                $bookGenre->genre_added = $request->input($id) == TRUE ? '1':'0';
+                if(null !== $request->input($id)) {
+                    $bookGenre->genre_added = '1';
+                }else {
+                    $bookGenre->genre_added = '0';
+                }
                 $bookGenre->save();
             }
             
@@ -75,25 +80,30 @@ class BookController extends Controller
     public function edit($slug) {
         $book= Book::where('slug',$slug)->first();
         $genres_menu = Genre::all();
-        $genres_id = BookGenre::where('book_id', $book->id)->get();
+        $books = DB::table('books')
+        ->join('book_genres', 'books.id', '=' , 'book_genres.book_id')
+        ->join('genres', 'book_genres.genres_id', '=' , 'genres.id')
+        ->where('books.id', $book->id)
+        ->select('books.*',  'genres.genres_name', 'book_genres.genre_added', 'book_genres.genres_id')
+        ->get();
         
-        $genres_array = [];
+        // $genres_array = [];
 
-        foreach($genres_id as $genre_id) {
-            array_push($genres_array, $genre_id->genres_id);
-        }
-        $genres = [];
+        // foreach($genres_id as $genre_id) {
+        //     array_push($genres_array, $genre_id->genres_id);
+        // }
+        // $genres = [];
         
-        foreach($genres_array as $genre_item) { 
-            array_push($genres, Genre::where('id', $genre_item)->first());
-        }
+        // foreach($genres_array as $genre_item) { 
+        //     array_push($genres, Genre::where('id', $genre_item)->first());
+        // }
        
 
         
         return view('edit-book',[
             'book' => $book,
-            'genres' => $genres,
-            'genres_menu' => $genres_menu
+            'genres_menu' => $genres_menu,
+            'books' => $books
         ]);
     }
 
@@ -120,18 +130,21 @@ class BookController extends Controller
             $book->slug = Str::slug($request->title, '-');
             $book->description = $request->description;
             $book->user_id = $request->user()->id;
-            $book->save();
+            $book->update();
             
             
             $genres = Genre::all();
             
             
             foreach($genres as $genre){
-                $bookGenre = new BookGenre();
-                $bookGenre->book_id = $book->id;
-                $bookGenre->genres_id = $genre->id;
+                
+                $bookGenre = BookGenre::where('book_id', $book->id)->where('genres_id', $genre->id)->first();
                 $id = $genre->id;
-                $bookGenre->genre_added = $request->input($id) == TRUE ? '1':'0';
+                if(null !== $request->input($id)) {
+                    $bookGenre->genre_added = '1';
+                }else {
+                    $bookGenre->genre_added = '0';
+                }
                 $bookGenre->update();
             }
             

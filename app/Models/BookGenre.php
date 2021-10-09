@@ -11,5 +11,7 @@ class BookGenre extends Model
     
     protected $fillable = [
         'genre_added',
+        'book_id',
+        'genres_id',
     ];
 }
