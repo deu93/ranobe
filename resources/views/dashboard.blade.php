@@ -1,6 +1,6 @@
 @extends('layouts.app')
 @section('content')
-    <div class="w-full px-4">
+    <div class=" px-4">
         <h2 class="text-lg color-white flex justify-center my-3">Мои ранобэ</h2>
         <div class="flex ml-5">
             @if (!$books->isEmpty())
