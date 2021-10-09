@@ -10,7 +10,7 @@
                     $shortDescription = Str::limit($book->description, 40, '...')
                 @endphp
                 <h4 class="mb-2 text-lg pl-2">{{ $book->title }}</h4>
-               <div class="flex justify-center">
+               <div class="flex justify-center my-2">
                 <img src="{{ asset('ranobe/public/img/' . $book->image) }}" alt="">
                </div>
                 <p>{{ $shortDescription }}</p>
