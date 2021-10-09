@@ -74,7 +74,7 @@ class BookController extends Controller
 
     public function edit($slug) {
         $book= Book::where('slug',$slug)->first();
-        
+        $genres_menu = Genre::all();
         $genres_id = BookGenre::where('book_id', $book->id)->get();
         
         $genres_array = [];
@@ -92,7 +92,8 @@ class BookController extends Controller
         
         return view('edit-book',[
             'book' => $book,
-            'genres' => $genres
+            'genres' => $genres,
+            'genres_menu' => $genres_menu
         ]);
     }
 
