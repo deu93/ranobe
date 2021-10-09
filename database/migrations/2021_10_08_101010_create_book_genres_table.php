@@ -15,8 +15,8 @@ class CreateBookGenresTable extends Migration
     {
         Schema::create('book_genres', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('book_id')->constrained();
-            $table->foreignId('genres_id')->constrained();
+            $table->foreignId('book_id')->constrained()->onDelete('cascade');
+            $table->foreignId('genres_id')->constrained()->onDelete('cascade');
             $table->tinyInteger('genre_added')->nullable();
             $table->timestamps();
         });

@@ -26,12 +26,14 @@
                     </div>
                     @enderror
                 </div>
-                @foreach ($genres as $genre )
+                <div class="flex">
+                    @foreach ($genres as $genre )
                     <div class="mb-4">
                         <label for="">{{ $genre->genres_name }}</label>
-                        <input type="checkbox"   name="{{ $genre->genres_name }}">
+                        <input type="checkbox"  class="mr-2"  name="{{ $genre->id }}">
                     </div>
                 @endforeach
+                </div>
 
                 <div class="mb-4 w-6/12">
                     <p class="text-lg">Выберите изображение для книги</p>

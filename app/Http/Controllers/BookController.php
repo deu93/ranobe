@@ -17,6 +17,7 @@ class BookController extends Controller
     
     public function index() {
         $genres = Genre::all();
+        
         if(auth()->user()->role == 1 || auth()->user()->role == 2){
             return view('add-book',[
                 'genres' => $genres
@@ -50,7 +51,19 @@ class BookController extends Controller
             $book->user_id = $request->user()->id;
             $book->save();
             
-            $bookGenre = new BookGenre();
+            
+            $genres = Genre::all();
+            $books = Book::latest()->first();
+            
+            foreach($genres as $genre){
+                $bookGenre = new BookGenre();
+                $bookGenre->book_id = $book->id;
+                $bookGenre->genres_id = $genre->id;
+                $id = $genre->id;
+                $bookGenre->genre_added = $request->input($id) == TRUE ? '1':'0';
+                $bookGenre->save();
+            }
+            
 
 
             return redirect()->route('dashboard')->with('status', 'Книга добавлена успешно');
