@@ -16,11 +16,13 @@ class BookController extends Controller
     }
     
     public function index() {
+        
         $genres = Genre::all();
         
         if(auth()->user()->role == 1 || auth()->user()->role == 2){
             return view('add-book',[
-                'genres' => $genres
+                'genres' => $genres,
+                'genres_menu' => $genres
             ]);   
         }
         

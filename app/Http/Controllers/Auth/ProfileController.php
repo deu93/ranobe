@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Auth;
 
 use App\Models\User;
+use App\Models\Genre;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Auth;
@@ -18,9 +19,11 @@ class ProfileController extends Controller
     public function index(User $user) {
         $id = Auth::user()->id;
         $data = User::where('id', $id)->get();
+        $genres_menu = Genre::all();
         
         return view('auth.profile', [
-            'data' => $data
+            'data' => $data,
+            'genres_menu' => $genres_menu
         ]);
     }
 

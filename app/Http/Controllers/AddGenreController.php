@@ -13,9 +13,11 @@ class AddGenreController extends Controller
     }
 
     public function index() {
-        
+        $genres_menu = Genre::all();
         if(auth()->user()->role > 1){
-            return view('add-genre');
+            return view('add-genre', [
+                'genres_menu' => $genres_menu
+            ]);
         }
         else{
             return redirect()->back()->with('status','404');

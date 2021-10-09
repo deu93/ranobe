@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Auth;
 
 use App\Models\User;
+use App\Models\Genre;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Hash;
@@ -16,7 +17,10 @@ class RegisterController extends Controller
     }
 
     public function index() {
-        return view('auth.register');
+        $genres_menu = Genre::all();
+        return view('auth.register', [
+            'genres_menu' => $genres_menu
+        ]);
     }
 
     public function store(Request $request) {

@@ -23,12 +23,13 @@ class BookShowController extends Controller
         foreach($genres_array as $genre_item) { 
             array_push($genres, Genre::where('id', $genre_item)->first());
         }
-       
+        $genres_menu = Genre::all();
 
         
         return view('book-show',[
             'book' => $book,
-            'genres' => $genres
+            'genres' => $genres,
+            'genres_menu' => $genres_menu
         ]);
     }
 }
