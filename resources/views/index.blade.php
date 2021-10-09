@@ -3,7 +3,7 @@
 
 <div class="flex ml-5">
   @foreach ($ranobes as $ranobe)
-  <div class="card pl-3 pr-2 m-2" style="width: 300px; height:600px;">
+  <div class="card pl-3 pr-2 m-2" style="width: 300px; height:650px;">
       <img src="{{ asset('ranobe/public/img/' . $ranobe->image) }}" class="card-img-top" alt="No image">
       <div class="card-body">
         @php
