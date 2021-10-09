@@ -33,6 +33,9 @@ Route::get('/editprofile', [ProfileController::class, 'edit'])->name('editprofil
 Route::post('/editprofile', [ProfileController::class, 'update']);
 Route::get('/add-book', [BookController::class, 'index'])->name('add-book');
 Route::post('/add-book', [BookController::class, 'store']);
+Route::get('/edit-book/{slug}', [BookController::class, 'edit'])->name('edit-book');
+Route::put('/edit-book/{slug}', [BookController::class, 'update']);
+Route::delete('/delete-book/{slug}', [BookController::class, 'destroy']);
 Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard');
 Route::get('/book-show/{slug}', [BookShowController::class, 'index']);
 Route::get('/add-genre', [AddGenreController::class, 'index'])->name('add-genre');
