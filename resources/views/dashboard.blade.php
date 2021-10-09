@@ -25,7 +25,7 @@
                             <form action="{{ url('delete-book/' . $book->slug) }}" method="POST">
                                 @csrf
                                 @method('DELETE')
-                                <button type="submit" class="bg-red-500 mt-4 text-white px-4 no-underline py-3 mb-3  rounded font-medium w-full ">Удалить</button>
+                                <button type="submit" class="bg-red-500 ml-5 mt-4 text-white px-4 no-underline py-3 mb-3  rounded font-medium w-full ">Удалить</button>
                             </form>
                          @endif
                      @endauth
