@@ -26,7 +26,7 @@ class BookController extends Controller
         
     }
 
-    public function store(Request $request, $slug) {
+    public function store(Request $request) {
         if(auth()->user()->role == 1 || auth()->user()->role == 2){
             $this->validate($request,[
                 'title' => 'required|max:255',
@@ -94,7 +94,7 @@ class BookController extends Controller
         ]);
     }
 
-    public function update(Request $request,) {
+    public function update(Request $request, $slug) {
         if(auth()->user()->role == 1 || auth()->user()->role == 2){
             $this->validate($request,[
                 'title' => 'required|max:255',
