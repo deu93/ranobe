@@ -137,15 +137,37 @@ class BookController extends Controller
             
             
             foreach($genres as $genre){
-                
                 $bookGenre = BookGenre::where('book_id', $book->id)->where('genres_id', $genre->id)->first();
-                $id = $genre->id;
-                if(null !== $request->input($id)) {
-                    $bookGenre->genre_added = '1';
-                }else {
-                    $bookGenre->genre_added = '0';
+                if(null !== $bookGenre) {
+                    
+                    $id = $genre->id;
+                    if(null !== $request->input($id)) {
+                        $bookGenre->genre_added = '1';
+                    }elseif($genre->id !== $bookGenre->genres_id) {
+                        $bookGenre->book_id = $book->id;
+                        $bookGenre->genres_id = $genre->id;
+                        $bookGenre->genre_added = '0';
+                    }else{
+                        
+                        $bookGenre->genre_added = '0';
+                    }
+                    $bookGenre->update();
+
+                }else{
+                    
+                    $bookGenre = new BookGenre();
+                    $bookGenre->book_id = $book->id;
+                    $bookGenre->genres_id = $genre->id;
+                    $id = $genre->id;
+                    if(null !== $request->input($id)) {
+                        $bookGenre->genre_added = '1';
+                    }else {
+                        $bookGenre->genre_added = '0';
+                    }
+                    $bookGenre->save();
+
                 }
-                $bookGenre->update();
+                
             }
             
 

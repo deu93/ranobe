@@ -2,8 +2,9 @@
 
 namespace App\Models;
 
-use Illuminate\Database\Eloquent\Factories\HasFactory;
+use App\Models\Genre;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Factories\HasFactory;
 
 class BookGenre extends Model
 {
@@ -14,4 +15,8 @@ class BookGenre extends Model
         'book_id',
         'genres_id',
     ];
+
+    public function genres() {
+        return $this->hasOne(Genre::class);
+    }
 }

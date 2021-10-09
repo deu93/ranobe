@@ -14,7 +14,7 @@
                 <img src="{{ asset('ranobe/public/img/' . $book->image) }}" alt="">
                </div>
                 <p>{{ $shortDescription }}</p>
-                <div class="flex inline">
+                <div class="flex inline w-6/12 mr-2">
                     <div class="w-full flex justify-center">
                         <a href="{{ url('edit-book/' . $book->slug) }}" class="bg-blue-500  mt-4 text-white px-4 no-underline py-3 mb-3  rounded font-medium w-full">Редактировать</a>
                         
