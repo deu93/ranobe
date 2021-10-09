@@ -5,7 +5,7 @@
         <div class="flex ml-5">
             @if (!$books->isEmpty())
             @foreach ($books as $book )
-            <div class="bg-white w-2/12 mb-4 pl-3 pr-2 m-2">
+            <div class="bg-white w-4/12 mb-4 pl-3 pr-2 m-2">
                 @php
                     $shortDescription = Str::limit($book->description, 40, '...')
                 @endphp
