@@ -13,13 +13,13 @@
                 <img src="{{ asset('ranobe/public/img/' . $book->image) }}" alt="">
                 <p>{{ $shortDescription }}</p>
                 <div class="w-full flex justify-center">
-                    <a href="{{ url('edit-book/' . $book->slug) }}" class="bg-blue-500  text-white px-4 no-underline py-2 mb-3  rounded font-medium w-4/12">Редактировать</a>
+                    <a href="{{ url('edit-book/' . $book->slug) }}" class="bg-blue-500  text-white px-4 no-underline py-3 mb-3  rounded font-medium w-4/12">Редактировать</a>
                     @auth()
                      @if (auth()->user()->role > 0 && auth()->user()->id == $book->user_id )
                         <form action="{{ url('delete-book/' . $book->slug) }}" method="POST">
                             @csrf
                             @method('DELETE')
-                            <button type="submit" class="bg-red-500 mt-2 text-white px-4 no-underline py-3 mb-3  rounded font-medium w-3/12 ">Удалить</button>
+                            <button type="submit" class="bg-red-500 mt-2 text-white px-4 no-underline py-3 mb-3  rounded font-medium w-4/12 ">Удалить</button>
                         </form>
                      @endif
                  @endauth
