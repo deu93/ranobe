@@ -10,9 +10,15 @@
                     <img class="mt-3 ml-3" src="{{ asset('ranobe/public/img/' . $book->image) }}" alt="">
                  </div>
                  <div class="flex border-4 p-2 m-2">
-                    @foreach ($genres as $genre )
-                    <p>{{ $genre->genres_name }}, &nbsp;</p>
-                    @endforeach
+                    <ul class="flex w-full">
+                        @foreach ($genres_menu as $genres_item )
+                        <li class="border-2 m-2 p-1">
+                            <a class="no-underline " href="{{ url('books-genre/' . $genres_item->id) }}">{{ $genres_item->genres_name }}</a>
+                        </li>
+                  @endforeach
+                   
+                    </ul>
+                    
                  </div>
                  
                  <p class="text-lg mb-3 mt-2 mt-3 ml-3 mr-3">{{ $book->description }}</p>
