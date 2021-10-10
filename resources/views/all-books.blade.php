@@ -5,7 +5,7 @@
   <div class="w-8/12">
     @foreach ($books as $book)
     <div class="card pl-3 pr-2 m-2" style="width: 100%; height:350px;">
-        <img src="{{ asset('ranobe/public/img/' . $book->image) }}" class="card-img-top" alt="No image">
+        <img style="width: 200px; height:200px;" src="{{ asset('ranobe/public/img/' . $book->image) }}" class="card-img-top" alt="No image">
         <div class="card-body">
           
           <h5 class="card-title m-auto text-xl mb-1">{{ $book->title }}</h5>
