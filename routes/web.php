@@ -42,3 +42,4 @@ Route::get('/book-show/{slug}', [BookShowController::class, 'index']);
 Route::get('/add-genre', [AddGenreController::class, 'index'])->name('add-genre');
 Route::post('/add-genre', [AddGenreController::class, 'store']);
 Route::get('/all-books', [AllBooksController::class, 'index'])->name('all-books');
+Route::get('/books-genre/{id}', [AllBooksController::class, 'show']);

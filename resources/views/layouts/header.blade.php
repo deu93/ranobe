@@ -30,8 +30,8 @@
               Жанры
             </a>
             <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-              @foreach ($genres_menu as $genre )
-                <li><a class="dropdown-item" href="#">{{ $genre->genres_name }}</a></li>
+              @foreach ($genres_menu as $genres_item )
+                <li><a class="dropdown-item" href="{{ url('books-genre/' . $genres_item->id)}}">{{ $genres_item->genres_name }}</a></li>
               @endforeach
               
               

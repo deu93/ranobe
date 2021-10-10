@@ -4,7 +4,9 @@
 <div class="flex ml-5">
   <div class="w-8/12">
     @foreach ($books as $book)
+    @if ($book->genre_added == 1)
     <div class="card pl-3 pr-2 m-2" style="width: 100%; height:550px;">
+        
         <img style="width: 200px; height:300px;" class="mt-2" src="{{ asset('ranobe/public/img/' . $book->image) }}" class="card-img-top" alt="No image">
         <div class="card-body">
           
@@ -12,7 +14,11 @@
           <p class="card-text m-auto">{{ $book->description }}</p>
           <a href="/book-show/{{ $book->slug}}" class="btn btn-primary  mt-8">Читать</a>
         </div>
+        
       </div>
+      
+      
+      @endif
     @endforeach
   </div>
   <div class="flex flex-col w-4/12">
