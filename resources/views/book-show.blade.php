@@ -22,7 +22,7 @@
                  </div>
                  
                  <p class="text-lg mb-3 mt-2 mt-3 ml-3 mr-3">{{ $book->description }}</p>
-                 <a type="submit" class="bg-blue-500 mt-5 text-white px-4 no-underline py-3 mb-3  rounded font-medium w-3/12 ">Читать с 1 главы</a>
+                 <a type="submit" class="bg-blue-500 mt-5 ml-3 text-white px-4 no-underline py-3 mb-3  rounded font-medium w-3/12 ">Читать с 1 главы</a>
                  @auth()
                      @if (auth()->user()->role > 0 && auth()->user()->id == $book->user_id )
                         <form action="{{ url('delete-book/' . $book->slug) }}" method="POST">
