@@ -1,15 +1,16 @@
 <?php
 
-use App\Http\Controllers\AddGenreController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\BookController;
+use App\Http\Controllers\AddGenreController;
+use App\Http\Controllers\AllBooksController;
+use App\Http\Controllers\BookShowController;
 use App\Http\Controllers\HomePageController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\Auth\LoginController;
 use App\Http\Controllers\Auth\LogoutController;
 use App\Http\Controllers\Auth\ProfileController;
 use App\Http\Controllers\Auth\RegisterController;
-use App\Http\Controllers\BookShowController;
 
 /*
 |--------------------------------------------------------------------------
@@ -40,3 +41,4 @@ Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard
 Route::get('/book-show/{slug}', [BookShowController::class, 'index']);
 Route::get('/add-genre', [AddGenreController::class, 'index'])->name('add-genre');
 Route::post('/add-genre', [AddGenreController::class, 'store']);
+Route::get('/all-books', [AllBooksController::class, 'index'])->name('all-books');
