@@ -11,7 +11,10 @@
                 @endphp
                 <h4 class="mb-2 text-lg pl-2">{{ $book->title }}</h4>
                <div class="flex justify-center my-2">
-                <img src="{{ asset('ranobe/public/img/' . $book->image) }}" alt="">
+                   <a href="/book-show/{{ $book->slug}}">
+                     <img src="{{ asset('ranobe/public/img/' . $book->image) }}" alt="no image">  
+                   </a>
+                
                </div>
                 <p>{{ $shortDescription }}</p>
                 <div class="flex inline w-6/12 mr-2">

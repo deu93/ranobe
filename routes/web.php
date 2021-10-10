@@ -7,6 +7,7 @@ use App\Http\Controllers\AllBooksController;
 use App\Http\Controllers\BookShowController;
 use App\Http\Controllers\HomePageController;
 use App\Http\Controllers\DashboardController;
+use App\Http\Controllers\AddChapterController;
 use App\Http\Controllers\Auth\LoginController;
 use App\Http\Controllers\Auth\LogoutController;
 use App\Http\Controllers\Auth\ProfileController;
@@ -43,3 +44,5 @@ Route::get('/add-genre', [AddGenreController::class, 'index'])->name('add-genre'
 Route::post('/add-genre', [AddGenreController::class, 'store']);
 Route::get('/all-books', [AllBooksController::class, 'index'])->name('all-books');
 Route::get('/books-genre/{id}', [AllBooksController::class, 'show']);
+Route::get('/add-chapter/{id}', [AddChapterController::class, 'index'])->name('add-chapter');
+Route::post('/add-chapter/{id}', [AddChapterController::class, 'store']);
