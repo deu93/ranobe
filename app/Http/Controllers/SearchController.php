@@ -19,7 +19,7 @@ class SearchController extends Controller
         $books_array = [];
         foreach ($books as $book) {
             $title = Str::lower($book->title);
-            $result = Str::of($title)->match('/'.$neddle.'/');
+            $result = Str::of(Str::lower($title))->match('/'.$neddle.'/');
             if(!$result->isEmpty()){
                 array_push($books_array, $book->id);
             }
