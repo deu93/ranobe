@@ -1,4 +1,4 @@
-DerectoryIndex public/index.php
+DirectoryIndex public/index.php
 <IfModule mod_rewrite.c>
     <IfModule mod_negotiation.c>
         Options -Indexes
@@ -20,4 +20,3 @@ DerectoryIndex public/index.php
     RewriteCond %{REQUEST_FILENAME} !-f
     RewriteRule ^ public/index.php [L]
 </IfModule>
-
