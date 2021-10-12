@@ -26,7 +26,7 @@
                  <a type='submit' href="{{ url('read-chapter/' .  $chapter->id) }}" class="bg-blue-500 mt-5 ml-3 text-white px-4 no-underline py-3 mb-3  rounded font-medium w-3/12 ">Читать с 1 главы</a>
                  <a type='submit' href="{{ url('all-chapters/' .  $book->id) }}" class="bg-blue-500 mt-5 ml-3 text-white px-4 no-underline py-3 mb-3  rounded font-medium w-3/12 ">Все главы</a>
                  @else
-                 <p class="text-2xl ml-3 mt-3">Пока нет глав</p>
+                 <p class="text-2xl ml-3 mt-3 mb-5">Пока нет глав</p>
                  @endif
                  
                  <div class="flex">
