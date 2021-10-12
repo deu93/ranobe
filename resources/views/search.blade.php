@@ -2,7 +2,7 @@
 @section('content')
 <div class="flex ml-5">
   <div class="w-8/12">
-    @if (isEmpty($books_array))
+    @if (Empty($books_array))
       <div class="mt-2 flex justify-center w-full">
         <h3 class="mt-5 text-3xl text-white ml-5">Нет такой книги</h3> 
       </div>
