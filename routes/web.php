@@ -12,6 +12,7 @@ use App\Http\Controllers\Auth\LoginController;
 use App\Http\Controllers\Auth\LogoutController;
 use App\Http\Controllers\Auth\ProfileController;
 use App\Http\Controllers\Auth\RegisterController;
+use App\Http\Controllers\ReadChapterController;
 
 /*
 |--------------------------------------------------------------------------
@@ -46,3 +47,4 @@ Route::get('/all-books', [AllBooksController::class, 'index'])->name('all-books'
 Route::get('/books-genre/{id}', [AllBooksController::class, 'show']);
 Route::get('/add-chapter/{id}', [AddChapterController::class, 'index'])->name('add-chapter');
 Route::post('/add-chapter/{id}', [AddChapterController::class, 'store']);
+Route::get('read-chapter/{id}', [ReadChapterController::class, 'index']);

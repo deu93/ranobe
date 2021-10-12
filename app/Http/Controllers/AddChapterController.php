@@ -34,7 +34,7 @@ class AddChapterController extends Controller
 
             
             $chapter = new Chapter();
-            dd($chapter);
+            
             $chapter->chapter_name = $request->chapter_name;
             $chapter->chapter_text = $request->chapter_text;
             $chapter->book_id = $id;
