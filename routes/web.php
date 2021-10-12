@@ -2,18 +2,19 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\BookController;
+use App\Http\Controllers\SearchController;
 use App\Http\Controllers\AddGenreController;
 use App\Http\Controllers\AllBooksController;
 use App\Http\Controllers\BookShowController;
 use App\Http\Controllers\HomePageController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\AddChapterController;
-use App\Http\Controllers\AllChaptersController;
 use App\Http\Controllers\Auth\LoginController;
+use App\Http\Controllers\AllChaptersController;
 use App\Http\Controllers\Auth\LogoutController;
+use App\Http\Controllers\ReadChapterController;
 use App\Http\Controllers\Auth\ProfileController;
 use App\Http\Controllers\Auth\RegisterController;
-use App\Http\Controllers\ReadChapterController;
 
 /*
 |--------------------------------------------------------------------------
@@ -50,3 +51,4 @@ Route::get('/add-chapter/{id}', [AddChapterController::class, 'index'])->name('a
 Route::post('/add-chapter/{id}', [AddChapterController::class, 'store']);
 Route::get('read-chapter/{id}', [ReadChapterController::class, 'index']);
 Route::get('all-chapters/{id}', [AllChaptersController::class, 'index']);
+Route::get('book-search', [SearchController::class, 'index']);

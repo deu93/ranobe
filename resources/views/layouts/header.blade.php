@@ -37,8 +37,9 @@
           </li>
           
         </ul>
-        <form class="d-flex">
-          <input class="form-control m-auto me-2" type="search" placeholder="Искать ранобэ" aria-label="Search">
+        
+        <form action="{{ url('book-search') }}" class="d-flex">
+          <input class="form-control m-auto me-2" type="search" placeholder="Искать книгу" name="search" aria-label="Search">
           <button class="btn btn-outline-success" type="submit">Поиск</button>
         </form>
         <ul class="navbar-nav  mb-2 mb-lg-0">
