@@ -1,6 +1,6 @@
 @extends('layouts.app')
 @section('content')
-    @if(isset($chapters))
+    @if(null != $chapters)
     <div class="flex justify-center">
         <div class="w-9/12 mt-5 ml-4 mb-8">
             @foreach ($chapters as $chapter)
