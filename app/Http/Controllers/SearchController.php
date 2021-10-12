@@ -15,11 +15,11 @@ class SearchController extends Controller
         ]);
         $books = Book::all();
         $genres_menu = Genre::all();
-        $neddle = $request->search;
+        $neddle = Str::lower($request->search);
         $books_array = [];
         foreach ($books as $book) {
             $title = Str::lower($book->title);
-            $result = Str::of(Str::lower($title))->match('/'.$neddle.'/');
+            $result = Str::of($title)->match('/'.$neddle.'/');
             if(!$result->isEmpty()){
                 array_push($books_array, $book->id);
             }
