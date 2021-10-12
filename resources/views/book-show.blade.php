@@ -22,8 +22,11 @@
                  </div>
                  
                  <p class="text-lg mb-3 mt-2 mt-3 ml-3 mr-3">{{ $book->description }}</p>
+                 @if(isset($chapter->id))
                  <a type='submit' href="{{ url('read-chapter/' .  $chapter->id) }}" class="bg-blue-500 mt-5 ml-3 text-white px-4 no-underline py-3 mb-3  rounded font-medium w-3/12 ">Читать с 1 главы</a>
-
+                 @else
+                 <p>Пока нет глав</p>
+                 @endif
                  <a type='submit' href="{{ url('all-chapters/' .  $book->id) }}" class="bg-blue-500 mt-5 ml-3 text-white px-4 no-underline py-3 mb-3  rounded font-medium w-3/12 ">Все главы</a>
                  <div class="flex">
                     @auth()
