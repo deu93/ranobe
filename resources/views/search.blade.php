@@ -12,7 +12,9 @@
           <p class="card-text m-auto">{{ $book->description }}</p>
           <a href="/book-show/{{ $book->slug}}" class="btn btn-primary  mt-8">Читать</a>
         </div>
-      </div> 
+      </div>
+    @else
+    <h3>Нет такой книги</h3> 
     @endif
     
     @endforeach
