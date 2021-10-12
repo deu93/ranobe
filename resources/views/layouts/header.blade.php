@@ -10,9 +10,7 @@
             <a class="nav-link active" aria-current="page" href="{{ route('all-books') }}">Все ранобэ</a>
           </li>
           
-            <li class="nav-item">
-              <a class="nav-link" href="#">Выбрать ранобэ</a>
-            </li> 
+            
             @auth()
               @if (auth()->user()->role > 0)
               <li class="nav-item">
