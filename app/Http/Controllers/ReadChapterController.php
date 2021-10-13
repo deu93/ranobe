@@ -24,10 +24,10 @@ class ReadChapterController extends Controller
         
         $chapters = Chapter::where('id', $id)->get();
         foreach($chapters as $chapter){
-            dd($chapter);
-            if($chapter->id < $id){
+            
+            if($chapter->id > $id){
                 $id = $chapter->id;
-                
+                dd($id);
                 return redirect('read-chapter/'.$id);
             }else{
                 continue;
