@@ -15,6 +15,10 @@
                     
             </div> 
             
+            
+        </div>
+        <div class="ml-10 mb-3 flex justify-center">
+            <a class="text-3xl border-2 p-1 border-gray-600" href="{{ url('book-show/'. $book->slug) }}">Оглавление</a>
         </div>
     </div>
 </div>
