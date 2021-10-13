@@ -29,7 +29,6 @@ class ReadChapterController extends Controller
             
             if($item->id > $id){
                 $id = $item->id;
-                dd($id);
                 return redirect('read-chapter/'.$id);
             }else{
                 continue;
