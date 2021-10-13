@@ -39,7 +39,7 @@ class AddChapterController extends Controller
             $chapter->chapter_text = $request->chapter_text;
             $chapter->book_id = $id;
             $chapter->save();
-            $book = Book::where('id', $id);
+            $book = Book::where('id', $id)->first();
             
             return redirect('book-show/'. $book->slug)->with('status', 'Глава успешно добавлена');
 
