@@ -41,7 +41,7 @@ class AddChapterController extends Controller
             $chapter->save();
             
             
-            return redirect()->route('dashboard')->with('status', 'Глава успешно добавлена');
+            return redirect()->back()->with('status', 'Глава успешно добавлена');
 
 
 
