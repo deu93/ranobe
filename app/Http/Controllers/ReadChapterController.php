@@ -22,11 +22,13 @@ class ReadChapterController extends Controller
 
     public function next($id) {
         
-        $chapters = Chapter::where('id', $id)->get();
-        foreach($chapters as $chapter){
+        $chapter = Chapter::where('id', $id)->first();
+        $chapters = Chapter::where('book_id', $chapter->book_id);
+        
+        foreach($chapters as $item){
             
-            if($chapter->id > $id){
-                $id = $chapter->id;
+            if($item->id > $id){
+                $id = $item->id;
                 dd($id);
                 return redirect('read-chapter/'.$id);
             }else{
