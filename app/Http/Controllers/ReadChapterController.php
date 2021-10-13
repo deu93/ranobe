@@ -23,7 +23,7 @@ class ReadChapterController extends Controller
     public function next($id) {
         
         $chapter = Chapter::where('id', $id)->first();
-        $chapters = Chapter::where('book_id', $chapter->book_id);
+        $chapters = Chapter::where('book_id', $chapter->book_id)->get();
         
         foreach($chapters as $item){
             
