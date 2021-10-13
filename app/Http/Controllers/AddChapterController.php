@@ -41,7 +41,7 @@ class AddChapterController extends Controller
             $chapter->save();
             
             
-            return redirect()->back()->with('status', 'Глава успешно добавлена');
+            return redirect('book-show/'. $id)->with('status', 'Глава успешно добавлена');
 
 
 
