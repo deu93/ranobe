@@ -6,7 +6,7 @@
             <div class="w-full mt-4 ml-4  mb-8">
                 @foreach ($chapters as $chapter)
                 <div class="">
-                    <a class="ml-5 mt-2" href="{{ url('read-chapter/' . $chapter->id) }}">{{ $chapter->chapter_name }}</a>
+                    <a class="ml-5 mb-3" href="{{ url('read-chapter/' . $chapter->id) }}">{{ $chapter->chapter_name }}</a>
                 </div>
                 @endforeach
             </div>
