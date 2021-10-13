@@ -36,4 +36,23 @@ class ReadChapterController extends Controller
 
         }
     }
+    public function prev($id) {
+        
+        $chapter = Chapter::where('id', $id)->first();
+        $chapters = Chapter::where('book_id', $chapter->book_id)->get();
+        $chapters_array = [];
+        foreach($chapters as $item){
+            array_push($chapters_array, $item);
+        }
+        $chapt_reverse = array_reverse($chapters_array);
+        foreach($chapt_reverse as $item){
+            if($item->id < $id){
+                $id = $item->id;
+                return redirect('read-chapter/'.$id);
+            }else{
+                continue;
+            }
+
+        }
+    }
 }

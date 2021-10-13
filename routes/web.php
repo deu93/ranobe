@@ -51,5 +51,6 @@ Route::get('/add-chapter/{id}', [AddChapterController::class, 'index'])->name('a
 Route::post('/add-chapter/{id}', [AddChapterController::class, 'store']);
 Route::get('read-chapter/{id}', [ReadChapterController::class, 'index']);
 Route::get('next-chapter/{id}', [ReadChapterController::class, 'next']);
+Route::get('prev-chapter/{id}', [ReadChapterController::class, 'prev']);
 Route::get('all-chapters/{id}', [AllChaptersController::class, 'index']);
 Route::get('book-search', [SearchController::class, 'index']);
