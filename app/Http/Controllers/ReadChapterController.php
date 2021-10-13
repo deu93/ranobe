@@ -10,7 +10,7 @@ class ReadChapterController extends Controller
 {
     public function index($id) {
         $genres_menu = Genre::all();
-        $chapter = Chapter::where('book_id', $id)->first();
+        $chapter = Chapter::where('id', $id)->first();
         return view('read-chapter', [
             'genres_menu' => $genres_menu,
             'chapter' => $chapter
