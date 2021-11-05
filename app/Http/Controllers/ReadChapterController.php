@@ -13,10 +13,27 @@ class ReadChapterController extends Controller
         $genres_menu = Genre::all();
         $chapter = Chapter::where('id', $id)->first();
         $book = Book::where('id', $chapter->book_id)->first();
+        $chapters = Chapter::where('book_id', $book->id)->get();
+        $chapters_array = [];
+        foreach($chapters as $item){
+            array_push($chapters_array, $item);
+        }
+        $first_chapter = false;
+        $last_chapter = false;
+
+        if($id == $chapters_array[0]['id']) {
+            $first_chapter = true;
+        }
+        if($id == $chapters_array[count($chapters_array) - 1]['id']) {
+            $last_chapter = true;
+        }
+
         return view('read-chapter', [
             'genres_menu' => $genres_menu,
             'chapter' => $chapter,
-            'book' => $book
+            'book' => $book,
+            'first_chapter' => $first_chapter,
+            'last_chapter' => $last_chapter,
         ]);
     }
 

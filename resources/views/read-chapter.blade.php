@@ -18,9 +18,13 @@
             
         </div>
         <div class="ml-10 mb-3 flex justify-center">
-            <a class="text-2xl border-2 rounded-md p-2 m-2 border-gray-600" href="{{ url('prev-chapter/'. $chapter->id) }}">Предыдущая глава</a>
-            <a class="text-2xl border-2 rounded-md p-2 m-2 border-gray-600" href="{{ url('book-show/'. $book->slug) }}">Оглавление</a>
-            <a class="text-2xl border-2 rounded-md p-2 m-2 border-gray-600" href="{{ url('next-chapter/'. $chapter->id) }}">Следующая глава</a>
+            @if($first_chapter == false)
+                <a class="text-2xl border-2 rounded-md p-2 m-2 border-gray-600" href="{{ url('prev-chapter/'. $chapter->id) }}">Предыдущая глава</a>
+            @endif
+                <a class="text-2xl border-2 rounded-md p-2 m-2 border-gray-600" href="{{ url('book-show/'. $book->slug) }}">Оглавление</a>
+            @if($last_chapter == false)
+                <a class="text-2xl border-2 rounded-md p-2 m-2 border-gray-600" href="{{ url('next-chapter/'. $chapter->id) }}">Следующая глава</a>
+            @endif
         </div>
     </div>
 </div>
